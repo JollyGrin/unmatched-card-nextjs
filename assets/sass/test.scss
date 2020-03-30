@@ -1,0 +1,453 @@
+$defence-blue: #2c76ac;
+$attack-red: #dc3034;
+$versatile-violet: #6c4e8d;
+$scheme-yellow: #fcbd71;
+$background-beige: #f7eadb;
+$editable-glow: 2px 2px rgba(0, 192, 255, 0.5), 2px -2px rgba(0, 192, 255, 0.5),
+  -2px 2px rgba(0, 192, 255, 0.5), -2px -2px rgba(0, 192, 255, 0.5);
+$corner: 1.5mm;
+$border-width: 0.8mm;
+$upper-left-width: 10mm;
+$upper-left-outer-width: $upper-left-width + $border-width;
+@media print {
+  * {
+    -webkit-transition: none !important;
+    transition: none !important;
+    zoom: 1 !important;
+  }
+}
+.editable {
+  &:hover {
+    // .editor {
+    //     visibility: visible;
+    //     opacity: 0.5;
+    // }
+    .um-invisible {
+      opacity: 1;
+    }
+  }
+  .delete-button {
+    color: #ccc;
+    cursor: pointer;
+    position: absolute;
+    right: -6mm;
+    top: -6mm;
+    z-index: 100;
+    &:hover {
+      color: red;
+    }
+  }
+  .icon.editor {
+    height: 50%;
+  }
+  .unmatched-icon {
+    cursor: pointer;
+    &:hover svg {
+      filter: drop-shadow(2px 2px rgba(0, 192, 255, 0.5))
+        drop-shadow(2px -2px rgba(0, 192, 255, 0.5))
+        drop-shadow(-2px 2px rgba(0, 192, 255, 0.5))
+        drop-shadow(-2px -2px rgba(0, 192, 255, 0.5));
+    }
+  }
+  .upper-left.character {
+    cursor: vertical-text;
+  }
+  .inner-top {
+    input {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      font-family: initial;
+      visibility: hidden;
+    }
+    &:hover {
+      box-shadow: $editable-glow;
+    }
+    &:hover input {
+      visibility: visible;
+    }
+  }
+  /deep/ .unmatched-icon {
+    cursor: pointer;
+    &:hover svg {
+      filter: drop-shadow(2px 2px rgba(0, 192, 255, 0.5))
+        drop-shadow(2px -2px rgba(0, 192, 255, 0.5))
+        drop-shadow(-2px 2px rgba(0, 192, 255, 0.5))
+        drop-shadow(-2px -2px rgba(0, 192, 255, 0.5));
+    }
+  }
+  /deep/ .editor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  /deep/ .invalid {
+    visibility: hidden;
+  }
+  /deep/ .value {
+    position: relative;
+    .editor {
+      left: 6mm;
+      top: -4.5mm;
+      width: 10mm;
+      height: 18mm;
+      visibility: hidden;
+    }
+    &:hover {
+      text-shadow: $editable-glow;
+    }
+    &:hover .editor {
+      visibility: visible;
+    }
+  }
+  /deep/ .boost-value {
+    position: relative;
+    .editor {
+      left: 2.8mm;
+      top: -5.8mm;
+      width: 10mm;
+      height: 18mm;
+      visibility: hidden;
+      opacity: 1;
+    }
+    &:hover {
+      text-shadow: $editable-glow;
+    }
+    &:hover .editor {
+      visibility: visible;
+    }
+  }
+  /deep/ .card-quantity {
+    .editor {
+      width: 10mm;
+      height: 18mm;
+      visibility: hidden;
+      opacity: 1;
+      top: -7mm;
+      left: 0mm;
+    }
+    &:hover {
+      text-shadow: $editable-glow;
+    }
+    &:hover .editor {
+      visibility: visible;
+    }
+  }
+  .um-invisible:hover {
+    opacity: 1;
+  }
+  .card-text:hover,
+  .card-text:focus-within {
+    .empty {
+      cursor: text;
+      display: block;
+    }
+  }
+  .character-name:hover,
+  .card-title:hover,
+  .card-text:hover {
+    box-shadow: $editable-glow;
+  }
+}
+.um-invisible {
+  opacity: 0;
+}
+.upper-left {
+  position: absolute;
+  width: 10.8mm;
+  height: 47mm;
+  border-top-left-radius: $corner;
+  overflow: hidden;
+  &.icon {
+    width: $upper-left-width;
+    // border-top-left-radius: $corner;
+    height: 17.1mm;
+    text-align: center;
+    overflow: visible;
+    .value {
+      user-select: none;
+      margin: 7.5mm 0 0;
+      color: #fff;
+      font-size: 7.8mm;
+    }
+  }
+  &.character {
+    top: 17.1mm;
+    width: $upper-left-width;
+    height: 29.1mm;
+    .character-name {
+      white-space: nowrap;
+      color: #fff;
+      padding: 0;
+      margin: 0;
+      transform: rotate(-90deg);
+      position: absolute;
+      transform-origin: right bottom;
+      text-align: right;
+      text-transform: uppercase;
+      font-size: 6mm;
+      bottom: 26.5mm;
+      right: 1.1mm;
+    }
+  }
+  .border {
+    fill: var(--outer-border-colour);
+  }
+  .name-panel {
+    fill: #000;
+  }
+}
+.versatile {
+  .canton {
+    fill: $versatile-violet;
+  }
+}
+.attack {
+  .canton {
+    fill: $attack-red;
+  }
+}
+.scheme {
+  .canton {
+    fill: $scheme-yellow;
+  }
+}
+.defence {
+  .canton {
+    fill: $defence-blue;
+  }
+}
+.printnplay {
+  .upper-left {
+    .border {
+      fill: var(--inner-border-colour);
+    }
+    .name-panel {
+      fill: #fff;
+    }
+    .character-name {
+      color: #000;
+    }
+  }
+  // .inner-top {
+  //     background: #FFF;
+  // }
+  .boost-circle {
+    background: #fff;
+    .boost-value {
+      color: #000;
+    }
+  }
+  .inner-bottom {
+    background: #fff;
+    color: #000;
+    .bottom-right {
+      .card-quantity {
+        border-left-color: #000;
+      }
+    }
+  }
+}
+.inner-border {
+  background: var(--inner-border-colour);
+  border-color: var(--inner-border-colour);
+}
+.main-wrapper {
+  position: relative;
+  // overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  border-radius: $corner;
+}
+.inner-top {
+  // height: 52.5mm;
+  position: relative;
+  flex: 1;
+  background: #fff;
+  border-top-left-radius: $corner;
+  border-top-right-radius: $corner;
+}
+.boost-circle {
+  position: absolute;
+  z-index: 1;
+  top: -4.5mm;
+  left: 48mm;
+  background: #000;
+  border-width: $border-width;
+  border-style: solid;
+  width: 7.5mm;
+  height: 7.5mm;
+  border-radius: 100%;
+  text-align: center;
+  .boost-value {
+    color: #fff;
+    padding-top: 0.1mm;
+    position: relative;
+    user-select: none;
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin: 0;
+  }
+}
+.inner-bottom {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-height: 28.8mm;
+  // overflow: hidden;
+  border-top: $border-width solid var(--inner-border-colour);
+  border-bottom-left-radius: $corner;
+  border-bottom-right-radius: $corner;
+  padding: 2mm 3mm 1mm;
+  background: #000;
+  background-image: var(--background-pattern);
+  color: #fff;
+  .card-title {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin: 0 0 1.8mm;
+    border-bottom: 0.3mm solid;
+  }
+  .card-text {
+    flex: 1;
+    overflow: scroll;
+    scrollbar-width: none;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    padding-bottom: 2.5mm;
+    .empty {
+      display: none;
+    }
+    div,
+    span {
+      font-size: 3.3mm;
+      line-height: 1.2em;
+      font-family: Archivo Narrow, sans-serif;
+      strong {
+        font-size: 4mm;
+        margin-right: 1mm;
+      }
+    }
+  }
+  .bottom-right {
+    padding: inherit;
+    font-size: 1.8mm;
+    position: absolute;
+    bottom: 0;
+    right: -1mm;
+    .card-quantity {
+      position: relative;
+      user-select: none;
+      font-family: League Gothic, sans-serif;
+      border-left: 0.2mm solid #fff;
+      padding-left: 0.5mm;
+      padding-top: 0.7mm;
+      margin-left: 0.5mm;
+    }
+  }
+}
+.upper-left-corner-wrapper {
+  overflow: hidden;
+}
+.upper-left-outer {
+  position: relative;
+  top: 0;
+  left: 0;
+  height: 42.9mm + $border-width;
+  width: $upper-left-width + $border-width;
+  // border-top-left-radius: $corner;
+}
+.icon-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+} //
+// Grid system
+// --------------------------------------------------
+
+// Container widths
+//
+// Set the container width, and override it for fixed navbars in media queries.
+
+.container {
+  @include container-fixed();
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+}
+
+// Fluid container
+//
+// Utilizes the mixin meant for fixed width containers, but without any defined
+// width for fluid, full width layouts.
+
+.container-fluid {
+  @include container-fixed();
+}
+
+// Row
+//
+// Rows contain and clear the floats of your columns.
+
+.row {
+  @include make-row();
+}
+
+// Columns
+//
+// Common styles for small and large grid columns
+
+@include make-grid-columns();
+
+// Extra small grid
+//
+// Columns, offsets, pushes, and pulls for extra small devices like
+// smartphones.
+
+@include make-grid(xs);
+
+// Small grid
+//
+// Columns, offsets, pushes, and pulls for the small device range, from phones
+// to tablets.
+
+@media (min-width: $screen-sm-min) {
+  @include make-grid(sm);
+}
+
+// Medium grid
+//
+// Columns, offsets, pushes, and pulls for the desktop device range.
+
+@media (min-width: $screen-md-min) {
+  @include make-grid(md);
+}
+
+// Large grid
+//
+// Columns, offsets, pushes, and pulls for the large desktop device range.
+
+@media (min-width: $screen-lg-min) {
+  @include make-grid(lg);
+}
