@@ -38,6 +38,9 @@ export default class index extends Component {
         >
           <Card />
         </Hero>
+        <span className='help'>
+          https://github.com/JollyGrin/unmatched-card-nextjs
+        </span>
       </div>
     )
   }

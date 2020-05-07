@@ -1,0 +1,168 @@
+{
+  "name": "",
+  "appearance": {
+    "isPNP": false,
+    "borderColour": "#E0EFF0",
+    "highlightColour": "#c0c0c0",
+    "patternName": ""
+  },
+  "hero": {
+    "name": "Bigfoot",
+    "isRanged": false,
+    "hp": 16,
+    "move": 3,
+    "specialAbility": "At the end of your turn, if there are no opposing fighters in Bigfoot's zone, you may draw 1 card."
+  },
+  "sidekick": {
+    "name": "The Jackalope",
+    "isRanged": false,
+    "hp": 6,
+    "quantity": 1,
+    "quote": "I work best alone"
+  },
+  "cards": [
+    {
+      "title": "Larger Than Life",
+      "type": "attack",
+      "characterName": "BIGFOOT",
+      "value": 6,
+      "boost": 3,
+      "basicText": "",
+      "immediateText": "",
+      "duringText": "",
+      "afterText": "",
+      "imageUrl": "",
+      "quantity": 3
+    },
+    {
+      "title": "Crash Through the Trees",
+      "type": "scheme",
+      "characterName": "BIGFOOT",
+      "value": 2,
+      "boost": 3,
+      "basicText": "Move Bigfoot up to 5 spaces. You may move Bigfoot through spaces containing opposing fighters.",
+      "immediateText": "",
+      "duringText": "",
+      "afterText": "",
+      "imageUrl": "",
+      "quantity": 2
+    },
+    {
+      "title": "It's Just Your Imagination",
+      "type": "defence",
+      "characterName": "Any",
+      "value": 2,
+      "boost": 3,
+      "basicText": "",
+      "immediateText": "Cancel all effects on your opponent's card.",
+      "duringText": "",
+      "afterText": "",
+      "imageUrl": "",
+      "quantity": 2
+    },
+    {
+      "title": "Savagery",
+      "type": "attack",
+      "characterName": "BIGFOOT",
+      "value": 4,
+      "boost": 3,
+      "basicText": "",
+      "immediateText": "",
+      "duringText": "",
+      "afterText": "if you won the combat, deal 1 damage to each fighter adjacent to Bigfoot.",
+      "imageUrl": "",
+      "quantity": 3
+    },
+    {
+      "title": "hoax",
+      "type": "versatile",
+      "characterName": "Any",
+      "value": 4,
+      "boost": 2,
+      "basicText": "",
+      "immediateText": "",
+      "duringText": "",
+      "afterText": " Move your fighter up to 5 spaces. You may move that fighter through spaces containing opposing fighters.",
+      "imageUrl": "",
+      "quantity": 3
+    },
+    {
+      "title": "Jackalope Horns",
+      "type": "scheme",
+      "characterName": "JACKALOPE",
+      "value": 2,
+      "boost": 2,
+      "basicText": "Move the Jackalope up to 5 spaces. You may move the Jackalope through spaces containing opposing fighters. Then deal 2 damage to any one fighter adjacent to the Jackalope.",
+      "immediateText": "",
+      "duringText": "",
+      "afterText": "",
+      "imageUrl": "",
+      "quantity": 3
+    },
+    {
+      "title": "disengage",
+      "type": "attack",
+      "characterName": "Any",
+      "value": 4,
+      "boost": 2,
+      "basicText": "",
+      "immediateText": "",
+      "duringText": "",
+      "afterText": "Choose an empty space in this fighter's zone. Place this fighter in that space.",
+      "imageUrl": "",
+      "quantity": 2
+    },
+    {
+      "title": "Skirmish",
+      "type": "versatile",
+      "characterName": "Any",
+      "value": 4,
+      "boost": 1,
+      "basicText": "",
+      "immediateText": "",
+      "duringText": "",
+      "afterText": "If you won the combat, choose one of the fighters in the combat and move them up to 2 spaces.",
+      "imageUrl": "",
+      "quantity": 3
+    },
+    {
+      "title": "Momentous Shift",
+      "type": "versatile",
+      "characterName": "Any",
+      "value": 3,
+      "boost": 1,
+      "basicText": "",
+      "immediateText": "",
+      "duringText": " If your fighter started this turn in a different space, this card's value is 5 instead.",
+      "afterText": "",
+      "imageUrl": "",
+      "quantity": 3
+    },
+    {
+      "title": "Feint",
+      "type": "versatile",
+      "characterName": "Any",
+      "value": 2,
+      "boost": 2,
+      "basicText": "",
+      "immediateText": "Cancel all effects on your opponent's card.",
+      "duringText": "",
+      "afterText": "",
+      "imageUrl": "",
+      "quantity": 3
+    },
+    {
+      "title": "Regroup",
+      "type": "versatile",
+      "characterName": "Any",
+      "value": 1,
+      "boost": 2,
+      "basicText": "",
+      "immediateText": "",
+      "duringText": "",
+      "afterText": "Draw 1 card. If you won the combat, draw 2 cards instead.",
+      "imageUrl": "",
+      "quantity": 3
+    }
+  ]
+}
